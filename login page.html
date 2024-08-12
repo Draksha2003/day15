@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.navbar{
+			background-color:rgb(91,103,87);
+			display:flex;
+			justify-content:space-between;
+			width:100%;
+		}
+		.secondblock{
+			display:flex;
+			justify-content: space-between;
+			width:200px;
+			gap:3px;
+
+		}
+
+		
+
+		.container {
+			diaplay:flex;
+			justify-content:center;
+			align-items: center;
+			padding:150px;
+			background-color: lightcoral;
+			height:100px;
+
+		}
+
+		table ,tr td,th{
+			border:2px solid black;
+		}
+		
+
+
+
+	</style>
+
+	<script>
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            const interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    alert('Time is up!');
+                    window.location.href = 'login1.html'; 
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const oneMinute = 60;
+            const display = document.querySelector('#time');
+            startTimer(oneMinute, display);
+        };
+
+
+        function submitform(){
+        	 window.location.href="loginform.html"
+        }
+
+    </script>
+</head>
+<body>
+<div class="navbar">
+		<div class="firstblock">
+			<div class="box1">
+				<h1> Drakshayani</h1>
+			</div>
+	    </div>
+		<div class="secondblock">
+			<div class="box2"style="padding-top:20px">
+				<div style="color: white;">Time remaining: <span id="time">01:00</span></div>
+				
+			</div>
+			<div class="box3" style="padding-top:20px">
+				<input type="button" id="outpage" style="background-color:lightblue;height:50px;width:100px;border-radius:30%;"value="logout" onclick= "submitform()">
+			</div>
+	    </div>
+</div>
+	<div class="container">
+		<div class="tableblock">
+			<table>
+				<tr>
+					<th>EMP_NAME</th>
+					<th>EMP_ID</th>
+					<th>EMP_AGE</th>
+					<th>EMP_ADDRESS</th>
+					<th> OPTIONS</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="empname" placeholder="enter empname" readonly></td>
+					<td><input type="number" name="empid" placeholder="enter empid"></td>
+					<td><input type="number" name="empage" placeholder="enter empage"></td>
+					<td><input type="text" name="address" placeholder="enter address"></td>
+					<td><input type="submit" name="edit " value="EDIT"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="empname" placeholder="enter empname"></td>
+					<td><input type="number" name="empid" placeholder="enter empid"></td>
+					<td><input type="number" name="empage" placeholder="enter empage"></td>
+					<td><input type="text" name="empaddress" placeholder="enter address"></td>
+					<td><input type="submit" name="edit " value="EDIT"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="empname" placeholder="enter empname"></td>
+					<td><input type="number" name="empid" placeholder="enter empid"></td>
+					<td><input type="number" name="empage" placeholder="enter empage"></td>
+					<td><input type="text" name="empaddress" placeholder="enter address"></td>
+					<td><input type="submit" name="edit " value="EDIT"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="empname" placeholder="enter empname"></td>
+					<td><input type="number" name="empid" placeholder="enter empid"></td>
+					<td><input type="number" name="empage" placeholder="enter empage"></td>
+					<td><input type="text" name="empaddress" placeholder="enter address"></td>
+					<td><input type="submit" name="edit " value="EDIT"></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+
+
+
+</body>
+</html>
